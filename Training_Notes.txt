@@ -1,0 +1,111 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Functions
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Arrow function
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+let scoreDolhins = calcAverage(44, 23, 71);
+let scoreKoalas = calcAverage(65, 54, 49);
+
+// Expression function
+const checkWinner = function (avgDolhins, avgKoalas) {
+	if (avgDolhins >= (2 * avgKoalas)){
+	   console.log('Dolhins win (${avgDolhins} vs. ${avgKoalas};
+	} else if (avgKoalas >= (2 * avgDolhins)){
+	   console.log('Koalas win (${avgKoalas} vs. ${avgDolhins};
+	} else {
+		console.log('No team wins...');
+	}
+}
+
+checkWinner(scoreDolhins, scoreKoalas);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ARRAYS
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Literal syntax
+                   0           1         2
+const friends = ['Michael', 'Steven', 'Peter'];
+
+const years = new Array(1991, 1984, 2008, 2020);
+
+//Retrieve data from an array
+friends[0]; //Michael
+friends[2]; //Peter
+
+// length in array
+friends.length
+// Retrieve last element in array
+friends[friends.length - 1];
+
+// Change array elements
+friends[2] = 'Jay' // friends = ['Michael', 'Steven', 'Jay']
+
+//Execise
+const calcAge = function (birthYear) {
+	return 2037 - birthYear;
+}
+
+const years = [1990, 1967, 2002, 2010, 2018];
+
+const ages = [calcAge(years[0]), calcAge(years[1]);
+
+// Methods
+//PUSH adds element to end of an array
+const friends = ['Michael', 'Steven', 'Peter'];
+friends.push('Jay'); //friends = ['Michael', 'Steven', 'Peter', 'Jay'];
+
+// UNSHIFT - add element to beginning of an array
+friends.unshift('John'); //friends = ['John', 'Michael', 'Steven', 'Peter', 'Jay'];
+
+// POP - Remove last element
+friends.pop() // Remove last element of array e.g. friends = ['John', 'Michael', 'Steven', 'Peter'];
+
+// SHIFT - Remove first element
+friends.shift() // Remove first element of array e.g. friends = ['Michael', 'Steven', 'Peter'];
+
+// INDEXOF - locate position of element within array
+friends.indexOf('Steven') // Returns position number, if element isn't within array then -1 is returned
+
+// INCLUDES - Confirms if element is within array
+friends.includes('Steven'); // Returns true if present and false if not present. NOTE: Strict equality, type of element must match
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// OBJECTS
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Data structure that can store multiple values within 1 structure.
+
+Syntax:
+const jonas = {
+	firstName: 'Jonas',
+	lastName: 'Schmedtmann',
+	age: 2037 - 1993,
+	job: 'teacher',
+	friends: ['Michael', 'Peter', 'Steven']
+};
+
+// dot notation - access a property within a object e.g. jona.job to access 'teacher'
+
+
+// brack notation - When trying to access an object through a variable
+// e.g. const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
+// console.log(jonas.interestedIn) would return 'undefined' as not within object. But if you use console.log(jonas[interestedIn])
+// the variable will return a value and it will return correct value for property.
+
+// You can add both options to add properties to an object e.g. jonas.location = 'Portugal'; or jonas['twitter] = '@jonasschmedtman';
+
+Methods
+const jonas = {
+	firstName: 'Jonas',
+	lastName: 'Schmedtmann',
+	birthYear: 1991,
+	job: 'teacher',
+	friends: ['Michael', 'Peter', 'Steven'],
+	hasDriversLicense: true,
+	calcAge: function() {
+	    this.age = 2037 - this.birthYear;   // If you use 'this' method then you can access the properties from the object calling the method e.g. jonas 
+		return this.age;
+	}
+};
+
+jonas.calcAge(1991);
